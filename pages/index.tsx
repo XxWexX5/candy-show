@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <meta property="og:image" content="/image-candy.jpg" />
         <meta
           property="og:url"
-          content="http://euro-travel-example.com/index.htm"
+          content="https://candy-show-4h298zuii-xxwexx5.vercel.app"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
