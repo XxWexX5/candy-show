@@ -1,6 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import { BsYoutube } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
+
 const Home: NextPage = () => {
   return (
     <>
@@ -26,6 +30,10 @@ const Home: NextPage = () => {
 
       <main>
         <h1>Hello World!</h1>
+
+        <BsYoutube />
+        <BsFacebook />
+        <AiFillInstagram />
       </main>
     </>
   );
