@@ -4,8 +4,20 @@ import Head from "next/head";
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    fetch("/api/todos")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json.todos);
+      })
+      .catch((e) => {
+        console.error(e.message);
+      });
+  });
+
   return (
     <>
       <Head>
