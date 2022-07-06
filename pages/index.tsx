@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import * as styled from "./styles";
+
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
@@ -40,13 +42,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <styled.App>
         <h1>Hello World!</h1>
 
         <BsYoutube />
         <BsFacebook />
         <AiFillInstagram />
-      </main>
+      </styled.App>
     </>
   );
 };
