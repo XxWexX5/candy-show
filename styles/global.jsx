@@ -1,11 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
+// font-family: 'Playball', cursive;
+
 const GlobalStyles = createGlobalStyle`
     html,
     body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     }
 
@@ -103,7 +105,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
     }
 
