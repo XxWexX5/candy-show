@@ -8,8 +8,7 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { useEffect } from "react";
 
-import { Logo } from "../components/Logo";
-import { Cart } from "../components/Cart";
+import { Header } from "../components/Header";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -46,14 +45,7 @@ const Home: NextPage = () => {
       </Head>
 
       <styled.App>
-        <h1>Hello World!</h1>
-
-        <BsYoutube />
-        <BsFacebook />
-        <AiFillInstagram />
-
-        <Logo type="default" />
-        <Cart amount={2} value={2.55} />
+        <Header />
       </styled.App>
     </>
   );

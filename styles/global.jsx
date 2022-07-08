@@ -148,6 +148,12 @@ const GlobalStyles = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
     }
+
+    .container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+    }
 `;
 
 export default GlobalStyles;

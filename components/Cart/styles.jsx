@@ -9,8 +9,8 @@ export const WrapperCart = styled.div`
 
 export const Cart = styled.div`
   ${({ theme }) => css`
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
     position: relative;
   `};
 `;
@@ -20,7 +20,7 @@ export const Amount = styled.div`
     background-color: ${theme.colors.purple01};
     color: ${theme.colors.white};
     position: absolute;
-    top: 0;
+    top: -0.3rem;
     right: -0.3rem;
     min-width: 1.65rem;
     min-height: 1.65rem;
