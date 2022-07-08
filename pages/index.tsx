@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import * as styled from "./styles";
+import * as styled from "../styles/styles";
 
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
