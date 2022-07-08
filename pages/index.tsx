@@ -3,12 +3,10 @@ import Head from "next/head";
 
 import * as styled from "../styles/styles";
 
-import { BsYoutube } from "react-icons/bs";
-import { BsFacebook } from "react-icons/bs";
-import { AiFillInstagram } from "react-icons/ai";
 import { useEffect } from "react";
 
 import { Header } from "../components/Header";
+import { SocialMedia } from "../components/SocialMedia";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -46,6 +44,8 @@ const Home: NextPage = () => {
 
       <styled.App>
         <Header />
+
+        <SocialMedia text="youtube" href="https://www.youtube.com/" />
       </styled.App>
     </>
   );
