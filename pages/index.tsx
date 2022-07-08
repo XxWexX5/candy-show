@@ -6,7 +6,7 @@ import * as styled from "../styles/styles";
 import { useEffect } from "react";
 
 import { Header } from "../components/Header";
-import { SocialMedia } from "../components/SocialMedia";
+import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
       <styled.App>
         <Header />
 
-        <SocialMedia text="youtube" href="https://www.youtube.com/" />
+        <Footer />
       </styled.App>
     </>
   );

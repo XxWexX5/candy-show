@@ -8,15 +8,15 @@ const social = [
   {
     youtube: {
       text: "Youtube",
-      icon: <BsYoutube size={30} color="#561B61" />,
+      icon: <BsYoutube size={27} color="#561B61" />,
     },
     facebook: {
       text: "Facebook",
-      icon: <BsFacebook size={30} color="#561B61" />,
+      icon: <BsFacebook size={27} color="#561B61" />,
     },
     instagram: {
       text: "Instagram",
-      icon: <AiFillInstagram size={30} color="#561B61" />,
+      icon: <AiFillInstagram size={27} color="#561B61" />,
     },
   },
 ];

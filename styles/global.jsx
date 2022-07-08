@@ -153,6 +153,7 @@ const GlobalStyles = createGlobalStyle`
         width: 100%;
         max-width: 1120px;
         margin: 0 auto;
+        padding: 1.15rem 1.35rem;
     }
 `;
 
