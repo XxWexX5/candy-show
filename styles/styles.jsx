@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const App = styled.main`
-  ${({ theme, color }) => css`
+  ${({ theme }) => css`
     color: ${theme.colors.purple01};
   `};
 `;

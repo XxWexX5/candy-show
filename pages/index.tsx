@@ -9,6 +9,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { useEffect } from "react";
 
 import { Logo } from "../components/Logo";
+import { Cart } from "../components/Cart";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -52,6 +53,7 @@ const Home: NextPage = () => {
         <AiFillInstagram />
 
         <Logo type="default" />
+        <Cart amount={2} value={2.55} />
       </styled.App>
     </>
   );

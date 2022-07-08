@@ -5,8 +5,6 @@ interface LogoProps {
 }
 
 export function Logo({ type }: LogoProps) {
-  console.log(type);
-
   if (type === "purple") {
     return (
       <Image
