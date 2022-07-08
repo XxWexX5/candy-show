@@ -8,6 +8,8 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
 import { useEffect } from "react";
 
+import { Logo } from "../components/Logo";
+
 const Home: NextPage = () => {
   useEffect(() => {
     fetch("/api/todos")
@@ -34,7 +36,7 @@ const Home: NextPage = () => {
         />
         <meta property="og:title" content="Candy Show" />
         <meta property="og:type" content="e-commerce" />
-        <meta property="og:image" content="/image-candy.jpg" />
+        <meta property="og:image" content="/images/image-candy.jpg" />
         <meta
           property="og:url"
           content="https://candy-show-4h298zuii-xxwexx5.vercel.app"
@@ -49,7 +51,7 @@ const Home: NextPage = () => {
           href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
 
       <styled.App>
@@ -58,6 +60,8 @@ const Home: NextPage = () => {
         <BsYoutube />
         <BsFacebook />
         <AiFillInstagram />
+
+        <Logo type="default" />
       </styled.App>
     </>
   );
