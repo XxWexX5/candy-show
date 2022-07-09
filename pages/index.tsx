@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Product } from "../components/Product";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -44,6 +45,14 @@ const Home: NextPage = () => {
 
       <styled.App>
         <Header />
+
+        <Product
+          imageSrc="/images/product.png"
+          imageAlt="Product"
+          title="Trufa BENDITO CACAU 55% CACAU 30 G"
+          olderPrice={310}
+          price={303}
+        />
 
         <Footer />
       </styled.App>
