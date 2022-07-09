@@ -50,6 +50,7 @@ export const WrapperPrice = styled.div`
       color: ${theme.colors.white};
       transform: scale(0.65);
       text-decoration: line-through;
+      opacity: 0.65;
     }
 
     .price {
