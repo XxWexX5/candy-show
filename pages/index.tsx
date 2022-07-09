@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Product } from "../components/Product";
+import { Checkout } from "../components/Checkout";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -53,6 +54,8 @@ const Home: NextPage = () => {
           olderPrice={310}
           price={303}
         />
+
+        <Checkout total={9.5} />
 
         <Footer />
       </styled.App>
