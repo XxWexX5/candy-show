@@ -16,6 +16,10 @@ export function Footer() {
 
           <SocialMedia text="instagram" href="https://www.instagram.com" />
         </div>
+
+        <p className="container-reserved-rights">
+          @ Todos direitos reservados.
+        </p>
       </div>
     </Styles.WrapperFooter>
   );

@@ -28,21 +28,17 @@ export function Product({
 
         <Styled.WrapperPrice>
           <div className="older-price">
-            {olderPrice
-              .toLocaleString("en-US", {
-                style: "currency",
-                currency: "BRL",
-              })
-              .replaceAll(".", ",")}
+            {olderPrice.toLocaleString("en-US", {
+              style: "currency",
+              currency: "BRL",
+            })}
           </div>
 
           <div className="price">
-            {price
-              .toLocaleString("en-US", {
-                style: "currency",
-                currency: "BRL",
-              })
-              .replaceAll(".", ",")}
+            {price.toLocaleString("en-US", {
+              style: "currency",
+              currency: "BRL",
+            })}
           </div>
         </Styled.WrapperPrice>
 

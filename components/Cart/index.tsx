@@ -19,9 +19,7 @@ export function Cart({ amount, value }: CartProps) {
       </Styles.Cart>
 
       <Styles.Price>
-        {value
-          .toLocaleString("en-US", { style: "currency", currency: "BRL" })
-          .replaceAll(".", ",")}
+        {value.toLocaleString("en-US", { style: "currency", currency: "BRL" })}
       </Styles.Price>
     </Styles.WrapperCart>
   );

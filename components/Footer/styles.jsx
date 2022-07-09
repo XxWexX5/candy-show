@@ -21,5 +21,12 @@ export const WrapperFooter = styled.footer`
         margin-top: 0.4rem;
       }
     }
+
+    .container-reserved-rights {
+      position: absolute;
+      bottom: 0.45rem;
+      right: 0.45rem;
+      font-size: 0.8rem;
+    }
   `};
 `;
