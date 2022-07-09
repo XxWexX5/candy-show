@@ -9,6 +9,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Product } from "../components/Product";
 import { Checkout } from "../components/Checkout";
+import { ProductCheckout } from "../components/ProductCheckout";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -56,6 +57,15 @@ const Home: NextPage = () => {
         />
 
         <Checkout total={9.5} />
+
+        <ProductCheckout
+          title="Trufa BENDITO CACAU 55% CACAU 30 G"
+          imageSrc="/images/product.png"
+          imageAlt="Product"
+          olderPrice={310}
+          price={303}
+          amount={2}
+        />
 
         <Footer />
       </styled.App>

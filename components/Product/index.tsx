@@ -1,4 +1,4 @@
-import * as Styled from "./styles";
+import * as Styles from "./styles";
 
 import Image from "next/image";
 
@@ -18,15 +18,15 @@ export function Product({
   price,
 }: ProductProps) {
   return (
-    <Styled.ContainerProduct>
-      <Styled.WrapperProduct>
+    <Styles.ContainerProduct>
+      <Styles.WrapperProduct>
         <div className="container-image">
           <Image src={imageSrc} alt={imageAlt} width="156" height="72" />
         </div>
 
-        <Styled.Title className="title">{title}</Styled.Title>
+        <Styles.Title className="title">{title}</Styles.Title>
 
-        <Styled.WrapperPrice>
+        <Styles.WrapperPrice>
           <div className="older-price">
             {olderPrice.toLocaleString("en-US", {
               style: "currency",
@@ -40,9 +40,9 @@ export function Product({
               currency: "BRL",
             })}
           </div>
-        </Styled.WrapperPrice>
+        </Styles.WrapperPrice>
 
-        <Styled.WrapperButton>
+        <Styles.WrapperButton>
           <div className="container-image">
             <Image
               src="/images/icon-cart-white.svg"
@@ -53,16 +53,16 @@ export function Product({
           </div>
 
           <span className="text">Adicionar ao carrinho</span>
-        </Styled.WrapperButton>
-      </Styled.WrapperProduct>
+        </Styles.WrapperButton>
+      </Styles.WrapperProduct>
 
-      <Styled.ControlAmount>
+      <Styles.ControlAmount>
         <button className="button-less">-</button>
 
         <span className="value">0</span>
 
         <button className="button-plus">+</button>
-      </Styled.ControlAmount>
-    </Styled.ContainerProduct>
+      </Styles.ControlAmount>
+    </Styles.ContainerProduct>
   );
 }
