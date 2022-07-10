@@ -62,8 +62,6 @@ export function ProductCheckout({
               type="number"
               id="amount"
               defaultValue="0"
-              value={amount}
-              onChange={() => {}}
               min="1"
               max="99"
             />
