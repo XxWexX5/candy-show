@@ -1,8 +1,9 @@
 import type { AppProps } from "next/app";
 
-import GlobalStyles from "../styles/global";
 import { ThemeProvider } from "styled-components";
-import theme from "../styles/theme-styles";
+
+import GlobalStyles from "../../styles/global";
+import theme from "../../styles/theme-styles";
 
 import { Server } from "miragejs";
 

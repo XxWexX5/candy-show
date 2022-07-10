@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 
 import Head from "next/head";
-import { Checkout } from "../components/Checkout";
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { ProductCheckout } from "../components/ProductCheckout";
+import { Checkout } from "../../components/Checkout";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { ProductCheckout } from "../../components/ProductCheckout";
 
-import * as Styles from "../styles/cart";
+import * as Styles from "../../../styles/cart";
 
 const Cart: NextPage = () => {
   return (

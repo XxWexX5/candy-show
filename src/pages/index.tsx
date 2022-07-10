@@ -9,15 +9,13 @@ import "swiper/css/pagination";
 
 import { FreeMode, Pagination } from "swiper";
 
-import * as styled from "../styles/styles";
+import * as styled from "../../styles/styles";
 
 import { useEffect } from "react";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Product } from "../components/Product";
-import { Checkout } from "../components/Checkout";
-import { ProductCheckout } from "../components/ProductCheckout";
 
 const Home: NextPage = () => {
   useEffect(() => {
