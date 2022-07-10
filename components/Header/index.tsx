@@ -1,7 +1,5 @@
 import * as Styles from "./styles";
 
-import Link from "next/link";
-
 import { Logo } from "../Logo";
 import { Cart } from "../Cart";
 
@@ -9,13 +7,9 @@ export function Header() {
   return (
     <Styles.WrapperHeader>
       <div className="container">
-        <Link href="/">
-          <Logo type="default" />
-        </Link>
+        <Logo type="default" />
 
-        <Link href="cart">
-          <Cart amount={2} value={20} />
-        </Link>
+        <Cart amount={2} value={20} />
       </div>
     </Styles.WrapperHeader>
   );

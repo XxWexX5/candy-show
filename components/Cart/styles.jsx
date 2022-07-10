@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const WrapperCart = styled.div`
+export const WrapperCart = styled.a`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
