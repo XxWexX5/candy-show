@@ -8,6 +8,10 @@ export const WrapperProductCheckout = styled.div`
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     padding: 2rem 1.35rem;
+    padding-right: 3rem;
+    width: 100%;
+    border-radius: 0.3rem;
+    overflow: hidden;
 
     section {
       height: 100%;
@@ -25,11 +29,21 @@ export const WrapperProductCheckout = styled.div`
         display: flex;
         align-items: center;
 
+        .container-image-product {
+          position: relative;
+          width: 125px;
+          height: 60px;
+
+          img {
+            object-fit: contain;
+          }
+        }
+
         .wrapper-price {
           width: 100%;
           max-width: 6.6em;
           position: relative;
-          margin-left: 7rem;
+          margin-left: 1.35rem;
           padding-top: 0.65rem;
 
           header {
@@ -66,7 +80,7 @@ export const WrapperProductCheckout = styled.div`
         }
 
         .wrapper-amount {
-          margin-left: 3rem;
+          margin-left: 0.85rem;
           margin-top: -0.65rem;
 
           .title {
@@ -88,7 +102,7 @@ export const WrapperProductCheckout = styled.div`
           width: 100%;
           max-width: 6.6em;
           position: relative;
-          margin-left: 2rem;
+          margin-left: 1.35rem;
           padding-top: 0.65rem;
 
           header {
@@ -108,7 +122,7 @@ export const WrapperProductCheckout = styled.div`
 
             .value {
               font-weight: bold;
-              font-size: 1.2rem;
+              font-size: 1rem;
             }
           }
         }

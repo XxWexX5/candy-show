@@ -1,6 +1,16 @@
 import styled, { css } from "styled-components";
 
-export const WrapperCheckout = styled.div``;
+export const WrapperCheckout = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    margin-top: 2.65rem;
+
+    @media screen and (min-width: ${theme.responsive.desktop}) {
+      margin-top: 0;
+      margin-left: 3rem;
+    }
+  `};
+`;
 
 export const Delivery = styled.header`
   .title {

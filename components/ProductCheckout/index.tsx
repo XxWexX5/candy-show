@@ -20,14 +20,16 @@ export function ProductCheckout({
   amount,
 }: ProductCheckoutProps) {
   return (
-    <Styles.WrapperProductCheckout>
+    <Styles.WrapperProductCheckout className="wrapper-product-checkout">
       <section>
         <header>
           <h3 className="title">{title}</h3>
         </header>
 
         <main>
-          <Image src={imageSrc} alt={imageAlt} width={156} height={72} />
+          <div className="container-image-product">
+            <Image src={imageSrc} alt={imageAlt} layout="fill" />
+          </div>
 
           <div className="wrapper-price">
             <header>
