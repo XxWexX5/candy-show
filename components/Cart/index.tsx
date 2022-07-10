@@ -9,7 +9,7 @@ interface CartProps {
 
 export function Cart({ amount, value }: CartProps) {
   return (
-    <Styles.WrapperCart href="/cart">
+    <Styles.WrapperCart>
       <Styles.Cart>
         <Styles.Amount className={amount > 99 ? "big-circle" : ""}>
           <span>{amount > 99 ? "+99" : amount}</span>
