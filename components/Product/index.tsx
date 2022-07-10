@@ -21,7 +21,12 @@ export function Product({
     <Styles.ContainerProduct>
       <Styles.WrapperProduct>
         <div className="container-image">
-          <Image src={imageSrc} alt={imageAlt} width="156" height="72" />
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            className="image-product"
+            layout="fill"
+          />
         </div>
 
         <Styles.Title className="title">{title}</Styles.Title>
@@ -47,8 +52,7 @@ export function Product({
             <Image
               src="/images/icon-cart-white.svg"
               alt="Product."
-              width="18"
-              height="13"
+              layout="fill"
             />
           </div>
 

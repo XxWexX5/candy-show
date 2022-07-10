@@ -10,8 +10,8 @@ export function Logo({ type }: LogoProps) {
       <Image
         src="/images/logo-purple.svg"
         alt="Logo Candy Show."
-        width="124"
-        height="56"
+        width="120"
+        height="52"
       />
     );
   }
@@ -20,8 +20,8 @@ export function Logo({ type }: LogoProps) {
     <Image
       src="/images/logo.svg"
       alt="Logo Candy Show."
-      width="124"
-      height="56"
+      width="120"
+      height="52"
     />
   );
 }

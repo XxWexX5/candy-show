@@ -56,17 +56,6 @@ const Home: NextPage = () => {
           price={303}
         />
 
-        <Checkout total={9.5} />
-
-        <ProductCheckout
-          title="Trufa BENDITO CACAU 55% CACAU 30 G"
-          imageSrc="/images/product.png"
-          imageAlt="Product"
-          olderPrice={310}
-          price={303}
-          amount={2}
-        />
-
         <Footer />
       </styled.App>
     </>

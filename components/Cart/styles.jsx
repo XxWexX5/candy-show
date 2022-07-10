@@ -9,8 +9,8 @@ export const WrapperCart = styled.div`
 
 export const Cart = styled.div`
   ${({ theme }) => css`
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2.35rem;
+    height: 2.35rem;
     position: relative;
   `};
 `;
@@ -22,14 +22,15 @@ export const Amount = styled.div`
     position: absolute;
     top: -0.3rem;
     right: -0.3rem;
-    min-width: 1.65rem;
-    min-height: 1.65rem;
+    min-width: 1.35rem;
+    min-height: 1.35rem;
     border-radius: 50% 50%;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.1rem 0 0;
+    font-size: 0.9rem;
 
     &.big-circle {
       span {
@@ -43,6 +44,6 @@ export const Price = styled.span`
   ${({ theme }) => css`
     color: ${theme.colors.green01};
     margin-left: 0.85rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   `};
 `;

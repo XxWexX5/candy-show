@@ -8,10 +8,12 @@ export const WrapperFooter = styled.footer`
     left: 0;
     right: 0;
     margin: auto;
+    padding: 0.35rem 0 1.65rem;
 
     .container {
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     .wrapper-social-media {

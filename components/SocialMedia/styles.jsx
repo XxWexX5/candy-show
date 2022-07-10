@@ -8,6 +8,7 @@ export const SocialMidia = styled.a`
     .text {
       margin-left: 0.45rem;
       color: ${theme.purple03};
+      font-size: 0.9rem;
     }
   `};
 `;

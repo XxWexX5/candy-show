@@ -23,6 +23,10 @@ const theme = {
     gray10: "#282828",
     gray11: "#111111",
   },
+  responsive: {
+    tablet: "768px",
+    desktop: "1020px",
+  },
 };
 
 export default theme;
