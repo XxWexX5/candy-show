@@ -4,7 +4,7 @@ export const ContainerProduct = styled.div`
   ${({ theme }) => css`
     width: 100%;
     max-width: 17.5rem;
-    padding: 0 1rem;
+    padding: 0 1rem 2rem;
 
     @media screen and (min-width: ${theme.responsive.tablet}) {
       max-width: 30.5rem;

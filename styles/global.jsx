@@ -3,6 +3,10 @@ import { createGlobalStyle } from "styled-components";
 // font-family: 'Playball', cursive;
 
 const GlobalStyles = createGlobalStyle`
+    :root {
+        --swiper-theme-color: #7C168F;
+    }
+
     html,
     body {
     padding: 0;

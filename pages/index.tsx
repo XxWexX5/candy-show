@@ -56,84 +56,86 @@ const Home: NextPage = () => {
       <styled.App>
         <Header />
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          freeMode={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[FreeMode, Pagination]}
-          className="mySwiper"
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 50,
-            },
-            1700: {
-              slidesPerView: 4,
-              spaceBetween: 50,
-            },
-          }}
-        >
-          <SwiperSlide>
-            <Product
-              imageSrc="/images/product.png"
-              imageAlt="Product"
-              title="Trufa BENDITO CACAU 55% CACAU 30 G"
-              olderPrice={310}
-              price={303}
-            />
-          </SwiperSlide>
+        <div className="container">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            freeMode={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[FreeMode, Pagination]}
+            className="mySwiper"
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              1700: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            <SwiperSlide>
+              <Product
+                imageSrc="/images/product.png"
+                imageAlt="Product"
+                title="Trufa BENDITO CACAU 55% CACAU 30 G"
+                olderPrice={310}
+                price={303}
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <Product
-              imageSrc="/images/product.png"
-              imageAlt="Product"
-              title="Trufa BENDITO CACAU 55% CACAU 30 G"
-              olderPrice={310}
-              price={303}
-            />
-          </SwiperSlide>
+            <SwiperSlide>
+              <Product
+                imageSrc="/images/product.png"
+                imageAlt="Product"
+                title="Trufa BENDITO CACAU 55% CACAU 30 G"
+                olderPrice={310}
+                price={303}
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <Product
-              imageSrc="/images/product.png"
-              imageAlt="Product"
-              title="Trufa BENDITO CACAU 55% CACAU 30 G"
-              olderPrice={310}
-              price={303}
-            />
-          </SwiperSlide>
+            <SwiperSlide>
+              <Product
+                imageSrc="/images/product.png"
+                imageAlt="Product"
+                title="Trufa BENDITO CACAU 55% CACAU 30 G"
+                olderPrice={310}
+                price={303}
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <Product
-              imageSrc="/images/product.png"
-              imageAlt="Product"
-              title="Trufa BENDITO CACAU 55% CACAU 30 G"
-              olderPrice={310}
-              price={303}
-            />
-          </SwiperSlide>
+            <SwiperSlide>
+              <Product
+                imageSrc="/images/product.png"
+                imageAlt="Product"
+                title="Trufa BENDITO CACAU 55% CACAU 30 G"
+                olderPrice={310}
+                price={303}
+              />
+            </SwiperSlide>
 
-          <SwiperSlide>
-            <Product
-              imageSrc="/images/product.png"
-              imageAlt="Product"
-              title="Trufa BENDITO CACAU 55% CACAU 30 G"
-              olderPrice={310}
-              price={303}
-            />
-          </SwiperSlide>
-        </Swiper>
+            <SwiperSlide>
+              <Product
+                imageSrc="/images/product.png"
+                imageAlt="Product"
+                title="Trufa BENDITO CACAU 55% CACAU 30 G"
+                olderPrice={310}
+                price={303}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
 
         <Footer />
       </styled.App>
