@@ -15,6 +15,7 @@ export const WrapperProductCheckout = styled.div`
 
     section {
       height: 100%;
+      padding-right: 5rem;
 
       > header {
         margin-bottom: 1.15rem;

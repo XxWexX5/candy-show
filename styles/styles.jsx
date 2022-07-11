@@ -9,6 +9,7 @@ export const App = styled.main`
     justify-content: center;
     height: 100%;
     height: 100%;
+    margin-top: 16rem;
 
     .swiper {
       width: 100%;

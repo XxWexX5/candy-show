@@ -7,7 +7,7 @@ export const WrapperCheckout = styled.div`
 
     @media screen and (min-width: ${theme.responsive.desktop}) {
       margin-top: 0;
-      margin-left: 3rem;
+      margin-left: 5rem;
     }
   `};
 `;

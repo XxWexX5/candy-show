@@ -2,12 +2,8 @@ import styled, { css } from "styled-components";
 
 export const WrapperFooter = styled.footer`
   ${({ theme }) => css`
+    width: 100%;
     background-color: ${theme.colors.green01};
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
     padding: 0.35rem 0 1.65rem;
 
     .container {

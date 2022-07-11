@@ -11,11 +11,15 @@ import { FreeMode, Pagination } from "swiper";
 
 import * as styled from "../../styles/styles";
 
+import * as Styles from "../../styles/cart";
+
 import { useEffect } from "react";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Product } from "../components/Product";
+import { ProductCheckout } from "../components/ProductCheckout";
+import { Checkout } from "../components/Checkout";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -134,6 +138,23 @@ const Home: NextPage = () => {
             </SwiperSlide>
           </Swiper>
         </div>
+
+        <Styles.Cart>
+          <div className="container container-main">
+            <div className="wrapper-products-checkout no-overflow">
+              <ProductCheckout
+                title="Trufa BENDITO CACAU 55% CACAU 30 G"
+                imageSrc="/images/product.png"
+                imageAlt="Product"
+                olderPrice={310}
+                price={303}
+                amount={2}
+              />
+            </div>
+
+            <Checkout total={200} />
+          </div>
+        </Styles.Cart>
 
         <Footer />
       </styled.App>
