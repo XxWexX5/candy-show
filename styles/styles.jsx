@@ -11,6 +11,11 @@ export const App = styled.main`
     height: 100%;
     margin-top: 16rem;
 
+    .wrapper-products {
+      height: 100vh;
+      padding-top: 10%;
+    }
+
     .swiper {
       width: 100%;
       height: 100%;

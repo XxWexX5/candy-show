@@ -5,6 +5,7 @@ export const WrapperFooter = styled.footer`
     width: 100%;
     background-color: ${theme.colors.green01};
     padding: 0.35rem 0 1.65rem;
+    position: relative;
 
     .container {
       display: flex;

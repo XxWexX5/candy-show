@@ -7,8 +7,8 @@ export const Cart = styled.div`
       align-items: flex-start;
       flex-direction: column;
       justify-content: space-between;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding-top: 5rem;
+      padding-bottom: 8.5rem;
 
       @media screen and (min-width: ${theme.responsive.desktop}) {
         flex-direction: row;
