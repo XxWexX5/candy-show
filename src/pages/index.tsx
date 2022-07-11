@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 
 import { gql, useQuery } from "@apollo/client";
 
@@ -50,6 +51,10 @@ interface Product {
 }
 
 const Home: NextPage = () => {
+  const [amount, setAmount] = useState(0);
+
+  localStorage.setItem("amountAll", "0");
+
   const { data } = useQuery(GET_PRODUCTS_QUERY);
   let products = [];
 
@@ -80,7 +85,7 @@ const Home: NextPage = () => {
       </Head>
 
       <styled.App>
-        <Header />
+        <Header amount={amount} />
 
         <div className="container">
           <div className="wrapper-products">
@@ -123,6 +128,7 @@ const Home: NextPage = () => {
                       title={product.attributes.name}
                       olderPrice={product.attributes.price}
                       price={product.attributes.sellingPrice}
+                      setAmount={setAmount}
                     />
                   </SwiperSlide>
                 ))}

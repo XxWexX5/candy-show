@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import * as Styles from "./styles";
 
 import Image from "next/image";
@@ -8,6 +10,7 @@ interface ProductProps {
   title: string;
   olderPrice: number;
   price: number;
+  setAmount: any;
 }
 
 export function Product({
@@ -16,7 +19,29 @@ export function Product({
   title,
   olderPrice,
   price,
+  setAmount,
 }: ProductProps) {
+  const [products, setProducts] = useState([]);
+  const [countAmount, setCountAmount] = useState(0);
+
+  useEffect(() => {
+    setAmount([countAmount]);
+  }, [countAmount]);
+
+  function handleAmount(operation: string) {
+    if (operation === "plus") {
+      if (countAmount < 99) {
+        setCountAmount(countAmount + 1);
+      }
+    }
+
+    if (operation === "less") {
+      if (countAmount > 0) {
+        setCountAmount(countAmount - 1);
+      }
+    }
+  }
+
   return (
     <Styles.ContainerProduct>
       <Styles.WrapperProduct>
@@ -47,7 +72,7 @@ export function Product({
           </div>
         </Styles.WrapperPrice>
 
-        <Styles.WrapperButton>
+        <Styles.WrapperButton onClick={() => handleAmount("plus")}>
           <div className="container-image">
             <Image
               src="/images/icon-cart-white.svg"
@@ -61,11 +86,15 @@ export function Product({
       </Styles.WrapperProduct>
 
       <Styles.ControlAmount>
-        <button className="button-less">-</button>
+        <button className="button-less" onClick={() => handleAmount("less")}>
+          -
+        </button>
 
-        <span className="value">0</span>
+        <span className="value">{countAmount}</span>
 
-        <button className="button-plus">+</button>
+        <button className="button-plus" onClick={() => handleAmount("plus")}>
+          +
+        </button>
       </Styles.ControlAmount>
     </Styles.ContainerProduct>
   );
