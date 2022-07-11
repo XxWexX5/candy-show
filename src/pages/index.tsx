@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import { gql, useQuery } from "@apollo/client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -21,17 +23,39 @@ import { Product } from "../components/Product";
 import { ProductCheckout } from "../components/ProductCheckout";
 import { Checkout } from "../components/Checkout";
 
+const GET_PRODUCTS_QUERY = gql`
+  query {
+    products {
+      data {
+        id
+        attributes {
+          imageUrl
+          name
+          price
+          sellingPrice
+        }
+      }
+    }
+  }
+`;
+
+interface Product {
+  id: number;
+  attributes: {
+    imageUrl: string;
+    name: string;
+    price: number;
+    sellingPrice: number;
+  };
+}
+
 const Home: NextPage = () => {
-  useEffect(() => {
-    fetch("/api/todos")
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json.todos);
-      })
-      .catch((e) => {
-        console.error(e.message);
-      });
-  });
+  const { data } = useQuery(GET_PRODUCTS_QUERY);
+  let products = [];
+
+  if (data) {
+    products = data.products.data;
+  }
 
   return (
     <>
@@ -88,55 +112,20 @@ const Home: NextPage = () => {
                 },
               }}
             >
-              <SwiperSlide>
-                <Product
-                  imageSrc="/images/product.png"
-                  imageAlt="Product"
-                  title="Trufa BENDITO CACAU 55% CACAU 30 G"
-                  olderPrice={310}
-                  price={303}
-                />
-              </SwiperSlide>
+              {!products && <p>Carregando...</p>}
 
-              <SwiperSlide>
-                <Product
-                  imageSrc="/images/product.png"
-                  imageAlt="Product"
-                  title="Trufa BENDITO CACAU 55% CACAU 30 G"
-                  olderPrice={310}
-                  price={303}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Product
-                  imageSrc="/images/product.png"
-                  imageAlt="Product"
-                  title="Trufa BENDITO CACAU 55% CACAU 30 G"
-                  olderPrice={310}
-                  price={303}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Product
-                  imageSrc="/images/product.png"
-                  imageAlt="Product"
-                  title="Trufa BENDITO CACAU 55% CACAU 30 G"
-                  olderPrice={310}
-                  price={303}
-                />
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <Product
-                  imageSrc="/images/product.png"
-                  imageAlt="Product"
-                  title="Trufa BENDITO CACAU 55% CACAU 30 G"
-                  olderPrice={310}
-                  price={303}
-                />
-              </SwiperSlide>
+              {products &&
+                products.map((product: Product) => (
+                  <SwiperSlide key={product.id}>
+                    <Product
+                      imageSrc={product.attributes.imageUrl}
+                      imageAlt={product.attributes.name}
+                      title={product.attributes.name}
+                      olderPrice={product.attributes.price}
+                      price={product.attributes.sellingPrice}
+                    />
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </div>
         </div>
