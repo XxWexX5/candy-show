@@ -13,7 +13,15 @@ export const App = styled.main`
 
     .wrapper-products {
       height: 100vh;
-      padding-top: 10%;
+      padding-top: 80%;
+
+      @media screen and (min-width: ${theme.responsive.tablet}) {
+        padding-top: 35%;
+      }
+
+      @media screen and (min-width: ${theme.responsive.desktop}) {
+        padding-top: 10%;
+      }
     }
 
     .swiper {
