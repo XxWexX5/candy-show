@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 
 export const Cart = styled.div`
   ${({ theme }) => css`
+    width: 100%;
+
     .container-main {
       display: flex;
       align-items: flex-start;
