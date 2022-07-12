@@ -64,6 +64,7 @@ export function ProductCheckout({
               defaultValue="1"
               min="1"
               max="99"
+              readOnly
             />
           </div>
 
@@ -78,7 +79,7 @@ export function ProductCheckout({
           </div>
         </main>
       </section>
-
+      {/* 
       <aside>
         <div className="container-image">
           <Image
@@ -88,7 +89,7 @@ export function ProductCheckout({
             height={72}
           />
         </div>
-      </aside>
+      </aside> */}
     </Styles.WrapperProductCheckout>
   );
 }
