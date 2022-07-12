@@ -63,10 +63,6 @@ const Home: NextPage = () => {
   const [cart, setCart] = useState([]);
   let total = 0;
 
-  function handleCart(product: Cart) {
-    setCart([...cart, product]);
-  }
-
   cart.map((product: Cart) => {
     total += product.price;
   });
@@ -226,7 +222,7 @@ const Home: NextPage = () => {
                       price={product.attributes.sellingPrice}
                       setAmount={setAmount}
                       cart={cart}
-                      handleCart={handleCart}
+                      setCart={setCart}
                     />
                   </SwiperSlide>
                 ))}
@@ -241,7 +237,7 @@ const Home: NextPage = () => {
                 cart.length > 2 ? "" : "no-overflow"
               }`}
             >
-              {cart.map((productCart, index) => (
+              {cart.map((productCart: Cart, index) => (
                 <ProductCheckout
                   key={index}
                   title={productCart.title}

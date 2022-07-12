@@ -12,7 +12,7 @@ interface ProductProps {
   price: number;
   setAmount: any;
   cart: any;
-  handleCart: any;
+  setCart: any;
 }
 
 interface Cart {
@@ -31,7 +31,7 @@ export function Product({
   price,
   setAmount,
   cart,
-  handleCart,
+  setCart,
 }: ProductProps) {
   const [countAmount, setCountAmount] = useState(0);
 
@@ -42,7 +42,9 @@ export function Product({
   function handleAmount(operation: string, product: Cart) {
     if (operation === "plus") {
       if (countAmount < 99) {
-        handleCart(product);
+        console.log(cart);
+
+        setCart([...cart, product]);
         setCountAmount(countAmount + 1);
       }
     }
