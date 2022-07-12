@@ -234,7 +234,7 @@ const Home: NextPage = () => {
           <div className="container container-main">
             <div
               className={`wrapper-products-checkout ${
-                cart.length > 2 ? "" : "no-overflow"
+                cart.length > 1 ? "" : "no-overflow"
               }`}
             >
               {cart.map((productCart: Cart, index) => (
