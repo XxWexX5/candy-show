@@ -18,7 +18,7 @@ export const Cart = styled.div`
 
       .wrapper-products-checkout {
         overflow-y: scroll;
-        height: 65vh;
+        height: 16rem;
         padding-right: 1rem;
         margin-right: -1rem;
         width: 100%;

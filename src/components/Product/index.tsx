@@ -11,6 +11,16 @@ interface ProductProps {
   olderPrice: number;
   price: number;
   setAmount: any;
+  cart: any;
+  handleCart: any;
+}
+
+interface Cart {
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  olderPrice: number;
+  price: number;
 }
 
 export function Product({
@@ -20,17 +30,19 @@ export function Product({
   olderPrice,
   price,
   setAmount,
+  cart,
+  handleCart,
 }: ProductProps) {
-  const [products, setProducts] = useState([]);
   const [countAmount, setCountAmount] = useState(0);
 
   useEffect(() => {
     setAmount([countAmount]);
   }, [countAmount]);
 
-  function handleAmount(operation: string) {
+  function handleAmount(operation: string, product: Cart) {
     if (operation === "plus") {
       if (countAmount < 99) {
+        handleCart(product);
         setCountAmount(countAmount + 1);
       }
     }
@@ -53,9 +65,7 @@ export function Product({
             layout="fill"
           />
         </div>
-
         <Styles.Title className="title">{title}</Styles.Title>
-
         <Styles.WrapperPrice>
           <div className="older-price">
             {olderPrice.toLocaleString("en-US", {
@@ -72,7 +82,17 @@ export function Product({
           </div>
         </Styles.WrapperPrice>
 
-        <Styles.WrapperButton onClick={() => handleAmount("plus")}>
+        <Styles.WrapperButton
+          onClick={() =>
+            handleAmount("plus", {
+              imageSrc: imageSrc,
+              imageAlt: imageAlt,
+              title: title,
+              olderPrice: olderPrice,
+              price: price,
+            })
+          }
+        >
           <div className="container-image">
             <Image
               src="/images/icon-cart-white.svg"
@@ -86,13 +106,35 @@ export function Product({
       </Styles.WrapperProduct>
 
       <Styles.ControlAmount>
-        <button className="button-less" onClick={() => handleAmount("less")}>
+        <button
+          className="button-less"
+          onClick={() =>
+            handleAmount("less", {
+              imageSrc: imageSrc,
+              imageAlt: imageAlt,
+              title: title,
+              olderPrice: olderPrice,
+              price: price,
+            })
+          }
+        >
           -
         </button>
 
         <span className="value">{countAmount}</span>
 
-        <button className="button-plus" onClick={() => handleAmount("plus")}>
+        <button
+          className="button-plus"
+          onClick={() =>
+            handleAmount("plus", {
+              imageSrc: imageSrc,
+              imageAlt: imageAlt,
+              title: title,
+              olderPrice: olderPrice,
+              price: price,
+            })
+          }
+        >
           +
         </button>
       </Styles.ControlAmount>

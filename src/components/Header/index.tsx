@@ -5,15 +5,16 @@ import { Cart } from "../Cart";
 
 interface HeaderProps {
   amount: number;
+  total: number;
 }
 
-export function Header({ amount }: HeaderProps) {
+export function Header({ amount, total }: any) {
   return (
     <Styles.WrapperHeader>
       <div className="container">
         <Logo type="default" />
 
-        <Cart amount={0} value={20} />
+        <Cart amount={amount} value={total} />
       </div>
     </Styles.WrapperHeader>
   );

@@ -50,8 +50,26 @@ interface Product {
   };
 }
 
+interface Cart {
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  olderPrice: number;
+  price: number;
+}
+
 const Home: NextPage = () => {
   const [amount, setAmount] = useState(0);
+  const [cart, setCart] = useState([]);
+  let total = 0;
+
+  function handleCart(product: Cart) {
+    setCart([...cart, product]);
+  }
+
+  cart.map((product: Cart) => {
+    total += product.price;
+  });
 
   // const { data } = useQuery(GET_PRODUCTS_QUERY);
   let products = [
@@ -163,7 +181,7 @@ const Home: NextPage = () => {
       </Head>
 
       <styled.App>
-        <Header amount={amount} />
+        <Header amount={cart.length} total={total} />
 
         <div className="container">
           <div className="wrapper-products">
@@ -207,6 +225,8 @@ const Home: NextPage = () => {
                       olderPrice={product.attributes.price}
                       price={product.attributes.sellingPrice}
                       setAmount={setAmount}
+                      cart={cart}
+                      handleCart={handleCart}
                     />
                   </SwiperSlide>
                 ))}
@@ -216,18 +236,25 @@ const Home: NextPage = () => {
 
         <Styles.Cart>
           <div className="container container-main">
-            <div className="wrapper-products-checkout no-overflow">
-              <ProductCheckout
-                title="Trufa BENDITO CACAU 55% CACAU 30 G"
-                imageSrc="/images/product.png"
-                imageAlt="Product"
-                olderPrice={310}
-                price={303}
-                amount={2}
-              />
+            <div
+              className={`wrapper-products-checkout ${
+                cart.length > 2 ? "" : "no-overflow"
+              }`}
+            >
+              {cart.map((productCart, index) => (
+                <ProductCheckout
+                  key={index}
+                  title={productCart.title}
+                  imageSrc={productCart.imageSrc}
+                  imageAlt={productCart.imageAlt}
+                  olderPrice={productCart.olderPrice}
+                  price={productCart.price}
+                  amount={2}
+                />
+              ))}
             </div>
 
-            <Checkout total={200} />
+            <Checkout total={total} />
           </div>
         </Styles.Cart>
 
