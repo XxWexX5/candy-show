@@ -1,5 +1,7 @@
 import * as Styles from "./styles";
 
+import { useState } from "react";
+
 const valueFrete = 3.76;
 
 interface CheckoutProps {
@@ -7,6 +9,8 @@ interface CheckoutProps {
 }
 
 export function Checkout({ total }: CheckoutProps) {
+  const [message, setMessage] = useState(false);
+
   return (
     <Styles.WrapperCheckout>
       <Styles.Delivery>
@@ -42,7 +46,11 @@ export function Checkout({ total }: CheckoutProps) {
         </div>
       </Styles.Shipping>
 
-      <Styles.Button>Finalizar comprar</Styles.Button>
+      <Styles.Button onClick={() => setMessage(!message)}>
+        Finalizar comprar
+      </Styles.Button>
+
+      {message && <strong className="final-message">COMPRA REALIZADA!</strong>}
     </Styles.WrapperCheckout>
   );
 }

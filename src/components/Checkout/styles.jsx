@@ -9,6 +9,27 @@ export const WrapperCheckout = styled.div`
       margin-top: 0;
       margin-left: 5rem;
     }
+
+    .final-message {
+      color: ${theme.colors.green01};
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      margin-top: 1.35rem;
+      font-size: 1.2rem;
+      animation: 5s animation-show forwards ease-in;
+      opacity: 0;
+
+      @keyframes animation-show {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    }
   `};
 `;
 
