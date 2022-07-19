@@ -61,7 +61,7 @@ export function ProductCheckout({
             <input
               type="number"
               id="amount"
-              defaultValue="1"
+              defaultValue={amount}
               min="1"
               max="99"
               readOnly

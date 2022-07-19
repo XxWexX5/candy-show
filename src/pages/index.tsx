@@ -49,6 +49,7 @@ interface Product {
     name: string;
     price: number;
     sellingPrice: number;
+    amount: number;
   };
 }
 
@@ -58,6 +59,7 @@ interface Cart {
   title: string;
   olderPrice: number;
   price: number;
+  amount: number;
 }
 
 const Home: NextPage = () => {
@@ -79,6 +81,7 @@ const Home: NextPage = () => {
         name: "Trufa BENDITO CACAU 55% CACAU 30 G",
         price: 303,
         sellingPrice: 273,
+        amount: 1,
       },
     },
     {
@@ -90,6 +93,7 @@ const Home: NextPage = () => {
         name: "TRUFA MORANGO",
         price: 123,
         sellingPrice: 111,
+        amount: 1,
       },
     },
     {
@@ -101,6 +105,7 @@ const Home: NextPage = () => {
         name: "TRUFA TRADICIONAL 30 G",
         price: 303,
         sellingPrice: 273,
+        amount: 1,
       },
     },
     {
@@ -112,6 +117,7 @@ const Home: NextPage = () => {
         name: "TRUFA DE COCO 30 G",
         price: 303,
         sellingPrice: 273,
+        amount: 1,
       },
     },
     {
@@ -123,6 +129,7 @@ const Home: NextPage = () => {
         name: "TRUFA BRANCO 30G",
         price: 110,
         sellingPrice: 99,
+        amount: 1,
       },
     },
     {
@@ -134,6 +141,7 @@ const Home: NextPage = () => {
         name: "TRUFA MEZZO 30 G",
         price: 303,
         sellingPrice: 273,
+        amount: 1,
       },
     },
     {
@@ -145,6 +153,7 @@ const Home: NextPage = () => {
         name: "TRUFA MORANGO E MARACUJÁ 13,5 G",
         price: 110,
         sellingPrice: 99,
+        amount: 1,
       },
     },
   ];
@@ -221,6 +230,7 @@ const Home: NextPage = () => {
                       title={product.attributes.name}
                       olderPrice={product.attributes.price}
                       price={product.attributes.sellingPrice}
+                      amount={product.attributes.amount}
                     />
                   </SwiperSlide>
                 ))}
@@ -243,7 +253,7 @@ const Home: NextPage = () => {
                   imageAlt={productCart.imageAlt}
                   olderPrice={productCart.olderPrice}
                   price={productCart.price}
-                  amount={2}
+                  amount={productCart.amount}
                 />
               ))}
             </div>

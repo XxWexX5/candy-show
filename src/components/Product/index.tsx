@@ -11,14 +11,7 @@ interface ProductProps {
   title: string;
   olderPrice: number;
   price: number;
-}
-
-interface Cart {
-  imageSrc: string;
-  imageAlt: string;
-  title: string;
-  olderPrice: number;
-  price: number;
+  amount: number;
 }
 
 export function Product({
@@ -27,26 +20,10 @@ export function Product({
   title,
   olderPrice,
   price,
+  amount,
 }: ProductProps) {
-  const { cart, setCart } = useContext(CartContext);
-  const [countAmount, setCountAmount] = useState(0);
-
-  function handleAmount(operation: string, product: Cart) {
-    if (operation === "plus") {
-      if (countAmount < 99) {
-        console.log(cart);
-
-        setCart([...cart, product]);
-        setCountAmount(countAmount + 1);
-      }
-    }
-
-    if (operation === "less") {
-      if (countAmount > 0) {
-        setCountAmount(countAmount - 1);
-      }
-    }
-  }
+  const { cart, setCart, countAmount, setCountAmount, handleAmount } =
+    useContext(CartContext);
 
   return (
     <Styles.ContainerProduct>
@@ -84,6 +61,7 @@ export function Product({
               title: title,
               olderPrice: olderPrice,
               price: price,
+              amount: amount,
             })
           }
         >
@@ -109,6 +87,7 @@ export function Product({
               title: title,
               olderPrice: olderPrice,
               price: price,
+              amount: amount
             })
           }
         >
