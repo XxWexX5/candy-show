@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
 
+import { CartContextProvider } from "../contexts/CartContext";
+
 import { ApolloProvider } from "@apollo/client";
 
 import { client } from "../../lib/apollo";
@@ -11,12 +13,14 @@ import theme from "../../styles/theme-styles";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-        <GlobalStyles />
-      </ThemeProvider>
-    </ApolloProvider>
+    <CartContextProvider>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+          <GlobalStyles />
+        </ThemeProvider>
+      </ApolloProvider>
+    </CartContextProvider>
   );
 }
 

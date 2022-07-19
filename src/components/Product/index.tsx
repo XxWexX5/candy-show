@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 import * as Styles from "./styles";
 
@@ -10,9 +11,6 @@ interface ProductProps {
   title: string;
   olderPrice: number;
   price: number;
-  setAmount: any;
-  cart: any;
-  setCart: any;
 }
 
 interface Cart {
@@ -29,15 +27,9 @@ export function Product({
   title,
   olderPrice,
   price,
-  setAmount,
-  cart,
-  setCart,
 }: ProductProps) {
+  const { cart, setCart } = useContext(CartContext);
   const [countAmount, setCountAmount] = useState(0);
-
-  useEffect(() => {
-    setAmount([countAmount]);
-  }, [countAmount]);
 
   function handleAmount(operation: string, product: Cart) {
     if (operation === "plus") {

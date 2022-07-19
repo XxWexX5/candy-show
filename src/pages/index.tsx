@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { CartContext } from "../contexts/CartContext";
 
 import { gql, useQuery } from "@apollo/client";
 
@@ -59,8 +61,7 @@ interface Cart {
 }
 
 const Home: NextPage = () => {
-  const [amount, setAmount] = useState(0);
-  const [cart, setCart] = useState([]);
+  const { cart, setCart } = useContext(CartContext);
   let total = 0;
 
   cart.map((product: Cart) => {
@@ -177,7 +178,7 @@ const Home: NextPage = () => {
       </Head>
 
       <styled.App>
-        <Header amount={cart.length} total={total} />
+        <Header />
 
         <div className="container">
           <div className="wrapper-products">
@@ -220,9 +221,6 @@ const Home: NextPage = () => {
                       title={product.attributes.name}
                       olderPrice={product.attributes.price}
                       price={product.attributes.sellingPrice}
-                      setAmount={setAmount}
-                      cart={cart}
-                      setCart={setCart}
                     />
                   </SwiperSlide>
                 ))}
