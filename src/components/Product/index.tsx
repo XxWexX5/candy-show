@@ -105,6 +105,7 @@ export function Product({
               title: title,
               olderPrice: olderPrice,
               price: price,
+              amount: amount,
             })
           }
         >

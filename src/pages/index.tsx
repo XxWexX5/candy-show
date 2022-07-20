@@ -66,8 +66,10 @@ const Home: NextPage = () => {
   const { cart, setCart } = useContext(CartContext);
   let total = 0;
 
+  console.log(cart);
+
   cart.map((product: Cart) => {
-    total += product.price;
+    total += product.price * product.amount;
   });
 
   // const { data } = useQuery(GET_PRODUCTS_QUERY);

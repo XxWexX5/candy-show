@@ -12,6 +12,7 @@ interface Cart {
   title: string;
   olderPrice: number;
   price: number;
+  amount: number;
 }
 
 export function Header() {
@@ -20,7 +21,7 @@ export function Header() {
   let total = 0;
 
   cart.map((product: Cart) => {
-    total += product.price;
+    total += product.price * product.amount;
   });
 
   return (

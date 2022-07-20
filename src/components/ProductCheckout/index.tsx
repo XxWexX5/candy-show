@@ -19,6 +19,8 @@ export function ProductCheckout({
   price,
   amount,
 }: ProductCheckoutProps) {
+  const total = price * amount;
+
   return (
     <Styles.WrapperProductCheckout className="wrapper-product-checkout">
       <section>
@@ -61,7 +63,7 @@ export function ProductCheckout({
             <input
               type="number"
               id="amount"
-              defaultValue={amount}
+              value={amount}
               min="1"
               max="99"
               readOnly
@@ -74,7 +76,12 @@ export function ProductCheckout({
             </header>
 
             <main>
-              <p className="value">R$ 303,00</p>
+              <p className="value">
+                {total.toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </p>
             </main>
           </div>
         </main>

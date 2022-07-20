@@ -18,7 +18,21 @@ export function CartContextProvider({ children }) {
   function handleAmount(operation: string, product: Cart) {
     if (operation === "plus") {
       if (countAmount < 99) {
-        setCart([...cart, product]);
+        const getProductItem = cart.filter(
+          (productCart) => productCart.title === product.title
+        );
+
+        if (getProductItem.length === 0) {
+          product.amount = 1;
+        } else {
+          product.amount = parseInt(getProductItem[0].amount) + 1;
+        }
+
+        const filterCart = cart.filter(
+          (productCart) => productCart.title !== product.title
+        );
+
+        setCart([...filterCart, product]);
         setCountAmount(countAmount + 1);
       }
     }
