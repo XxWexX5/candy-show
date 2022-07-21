@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 
 interface Cart {
   imageSrc: string;
@@ -19,63 +19,86 @@ interface CartContextData {
   handleAmount: (operation: string, product: Cart) => void;
 }
 
-export const CartContext = createContext<CartContextData>({} as CartContextData);
+export const CartContext = createContext<CartContextData>(
+  {} as CartContextData
+);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cart, setCart] = useState<Cart[]>([]);
-  const [countAmount, setCountAmount] = useState(0);
+
+  useEffect(() => {
+    cleanningCart();
+  }, []);
+
+  function cleanningCart() {
+    let total = 0;
+
+    cart.map((product: Cart) => {
+      total += product.amount;
+    });
+
+    if (cart.length > 0 && total === 0) {
+      setCart([]);
+    }
+  }
 
   function handleAmount(operation: string, product: Cart) {
     if (operation === "plus") {
-      if (countAmount < 99) {
-        const getProductItem = cart.filter(
-          (productCart) => productCart.title === product.title
-        );
+      const getProductItem = cart.filter(
+        (productCart) => productCart.title === product.title
+      );
 
-        if (getProductItem.length === 0) {
-          product.amount = 1;
-        } else {
-          product.amount = getProductItem[0].amount + 1;
-        }
-
-        const filterCart = cart.filter(
-          (productCart) => productCart.title !== product.title
-        );
-
-        setCart([...filterCart, product]);
-        setCountAmount(countAmount + 1);
+      if (getProductItem.length === 0) {
+        product.amount = 1;
+      } else {
+        product.amount = getProductItem[0].amount + 1;
       }
+
+      if (product.amount > 99) {
+        product.amount = 99;
+      }
+
+      const filterCart = cart.filter(
+        (productCart) => productCart.title !== product.title
+      );
+
+      setCart([...filterCart, product]);
     }
 
     if (operation === "less") {
-      if (countAmount > 0) {
-        const getProductItem = cart.filter(
-          (productCart) => productCart.title === product.title
-        );
+      const getProductItem = cart.filter(
+        (productCart) => productCart.title === product.title
+      );
 
-        if (getProductItem.length === 0) {
-          product.amount = 1;
-        } else {
-          product.amount = getProductItem[0].amount - 1;
-        }
-
-        const filterCart = cart.filter(
-          (productCart) => productCart.title !== product.title
-        );
-
-        setCart([...filterCart, product]);
-        setCountAmount(countAmount - 1);
+      if (getProductItem.length === 0) {
+        product.amount = 1;
+      } else {
+        product.amount = getProductItem[0].amount - 1;
       }
+
+      if (product.amount <= 0) {
+        product.amount = 0;
+
+        const removingNoAmountCart = cart.filter(
+          (productCart) => productCart.amount !== 0
+        );
+
+        setCart([...removingNoAmountCart]);
+      }
+
+      const filterCart = cart.filter(
+        (productCart) => productCart.title !== product.title
+      );
+
+      setCart([...filterCart, product]);
     }
 
     if (operation === "delete") {
-      if (countAmount > 0) {
-        const filterCart = cart.filter(
-          (productCart) => productCart.title !== product.title
-        );
+      const filterCart = cart.filter(
+        (productCart) => productCart.title !== product.title
+      );
 
-        setCart([...filterCart]);
-      }
+      setCart([...filterCart]);
     }
   }
 

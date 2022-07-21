@@ -85,7 +85,7 @@ export function Product({
         </Styles.WrapperButton>
       </Styles.WrapperProduct>
 
-      {/* <Styles.ControlAmount>
+      <Styles.ControlAmount>
         <button
           className="button-less"
           onClick={() =>
@@ -102,7 +102,7 @@ export function Product({
           -
         </button>
 
-        <span className="value">{countAmount}</span>
+        <span className="value">{cart.length > 0 ? countAmount : 0}</span>
 
         <button
           className="button-plus"
@@ -119,7 +119,7 @@ export function Product({
         >
           +
         </button>
-      </Styles.ControlAmount> */}
+      </Styles.ControlAmount>
     </Styles.ContainerProduct>
   );
 }
