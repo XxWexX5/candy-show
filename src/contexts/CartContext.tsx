@@ -1,6 +1,4 @@
-import { createContext, useEffect, useState } from "react";
-
-export const CartContext = createContext([]);
+import { createContext, useState, ReactNode } from "react";
 
 interface Cart {
   imageSrc: string;
@@ -11,8 +9,20 @@ interface Cart {
   amount: number;
 }
 
-export function CartContextProvider({ children }) {
-  const [cart, setCart] = useState([]);
+interface CartContextProviderProps {
+  children: ReactNode;
+}
+
+interface CartContextData {
+  cart: Cart[];
+  setCart: any;
+  handleAmount: (operation: string, product: Cart) => void;
+}
+
+export const CartContext = createContext<CartContextData>({} as CartContextData);
+
+export function CartContextProvider({ children }: CartContextProviderProps) {
+  const [cart, setCart] = useState<Cart[]>([]);
   const [countAmount, setCountAmount] = useState(0);
 
   function handleAmount(operation: string, product: Cart) {
@@ -25,7 +35,7 @@ export function CartContextProvider({ children }) {
         if (getProductItem.length === 0) {
           product.amount = 1;
         } else {
-          product.amount = parseInt(getProductItem[0].amount) + 1;
+          product.amount = getProductItem[0].amount + 1;
         }
 
         const filterCart = cart.filter(
@@ -46,7 +56,7 @@ export function CartContextProvider({ children }) {
         if (getProductItem.length === 0) {
           product.amount = 1;
         } else {
-          product.amount = parseInt(getProductItem[0].amount) - 1;
+          product.amount = getProductItem[0].amount - 1;
         }
 
         const filterCart = cart.filter(
@@ -63,8 +73,6 @@ export function CartContextProvider({ children }) {
         const filterCart = cart.filter(
           (productCart) => productCart.title !== product.title
         );
-
-        console.log(cart);
 
         setCart([...filterCart]);
       }
