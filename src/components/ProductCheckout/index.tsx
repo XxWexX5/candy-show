@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
+
 import * as Styles from "./styles";
 
 import Image from "next/image";
@@ -19,6 +22,7 @@ export function ProductCheckout({
   price,
   amount,
 }: ProductCheckoutProps) {
+  const { handleAmount } = useContext(CartContext);
   const total = price * amount;
 
   return (
@@ -86,8 +90,19 @@ export function ProductCheckout({
           </div>
         </main>
       </section>
-      {/* 
-      <aside>
+
+      <aside
+        onClick={() =>
+          handleAmount("delete", {
+            imageSrc: imageSrc,
+            imageAlt: imageAlt,
+            title: title,
+            olderPrice: olderPrice,
+            price: price,
+            amount: amount,
+          })
+        }
+      >
         <div className="container-image">
           <Image
             src="/images/icon-trash.svg"
@@ -96,7 +111,7 @@ export function ProductCheckout({
             height={72}
           />
         </div>
-      </aside> */}
+      </aside>
     </Styles.WrapperProductCheckout>
   );
 }

@@ -22,8 +22,16 @@ export function Product({
   price,
   amount,
 }: ProductProps) {
-  const { cart, setCart, countAmount, setCountAmount, handleAmount } =
-    useContext(CartContext);
+  const { cart, setCart, handleAmount } = useContext(CartContext);
+  const [countAmount, setCountAmount] = useState(0);
+
+  useEffect(() => {
+    cart.map((cartProduct) => {
+      if (cartProduct.title === title) {
+        return setCountAmount(cartProduct.amount);
+      }
+    });
+  }, [cart]);
 
   return (
     <Styles.ContainerProduct>
@@ -87,7 +95,7 @@ export function Product({
               title: title,
               olderPrice: olderPrice,
               price: price,
-              amount: amount
+              amount: amount,
             })
           }
         >
