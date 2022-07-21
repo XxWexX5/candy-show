@@ -27,8 +27,16 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   const [cart, setCart] = useState<Cart[]>([]);
 
   useEffect(() => {
-    cleanningCart();
+    const cartStorage = localStorage.getItem
+      ? JSON.parse(localStorage.getItem("cart") as any)
+      : [];
+
+    setCart(cartStorage);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function cleanningCart() {
     let total = 0;
