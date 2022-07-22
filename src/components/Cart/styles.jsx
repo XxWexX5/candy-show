@@ -4,6 +4,12 @@ export const WrapperCart = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
+    transition: 0.35s opacity ease-in;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.65;
+    }
   `};
 `;
 

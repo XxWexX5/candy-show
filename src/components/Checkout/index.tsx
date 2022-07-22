@@ -22,7 +22,7 @@ export function Checkout({ total }: CheckoutProps) {
   }
 
   return (
-    <Styles.WrapperCheckout>
+    <Styles.WrapperCheckout id="wrapper-checkout">
       <Styles.Delivery>
         <h2 className="title">Entrega</h2>
 
