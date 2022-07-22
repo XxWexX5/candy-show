@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
+
 import * as Styles from "./styles";
 
 import { useState } from "react";
@@ -9,7 +12,14 @@ interface CheckoutProps {
 }
 
 export function Checkout({ total }: CheckoutProps) {
+  const { cart } = useContext(CartContext);
   const [message, setMessage] = useState(false);
+
+  function checkMessage() {
+    if (cart.length > 0) {
+      setMessage(!message);
+    }
+  }
 
   return (
     <Styles.WrapperCheckout>
@@ -46,9 +56,7 @@ export function Checkout({ total }: CheckoutProps) {
         </div>
       </Styles.Shipping>
 
-      <Styles.Button onClick={() => setMessage(!message)}>
-        Finalizar comprar
-      </Styles.Button>
+      <Styles.Button onClick={checkMessage}>Finalizar comprar</Styles.Button>
 
       {message && <strong className="final-message">COMPRA REALIZADA!</strong>}
     </Styles.WrapperCheckout>
