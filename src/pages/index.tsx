@@ -63,10 +63,20 @@ interface Cart {
 }
 
 const Home: NextPage = () => {
-  const { cart, setCart } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   let total = 0;
 
-  console.log(cart);
+  function compare(a: Cart, b: Cart) {
+    if (a.title < b.title) {
+      return -1;
+    }
+    if (a.title > b.title) {
+      return 1;
+    }
+    return 0;
+  }
+
+  const cartOrderByTitle = cart.sort(compare);
 
   cart.map((product: Cart) => {
     total += product.price * product.amount;
@@ -83,7 +93,7 @@ const Home: NextPage = () => {
         name: "Trufa BENDITO CACAU 55% CACAU 30 G",
         price: 303,
         sellingPrice: 273,
-        amount: 1,
+        amount: 0,
       },
     },
     {
@@ -95,7 +105,7 @@ const Home: NextPage = () => {
         name: "TRUFA MORANGO",
         price: 123,
         sellingPrice: 111,
-        amount: 1,
+        amount: 0,
       },
     },
     {
@@ -107,7 +117,7 @@ const Home: NextPage = () => {
         name: "TRUFA TRADICIONAL 30 G",
         price: 303,
         sellingPrice: 273,
-        amount: 1,
+        amount: 0,
       },
     },
     {
@@ -119,7 +129,7 @@ const Home: NextPage = () => {
         name: "TRUFA DE COCO 30 G",
         price: 303,
         sellingPrice: 273,
-        amount: 1,
+        amount: 0,
       },
     },
     {
@@ -131,7 +141,7 @@ const Home: NextPage = () => {
         name: "TRUFA BRANCO 30G",
         price: 110,
         sellingPrice: 99,
-        amount: 1,
+        amount: 0,
       },
     },
     {
@@ -143,7 +153,7 @@ const Home: NextPage = () => {
         name: "TRUFA MEZZO 30 G",
         price: 303,
         sellingPrice: 273,
-        amount: 1,
+        amount: 0,
       },
     },
     {
@@ -155,7 +165,7 @@ const Home: NextPage = () => {
         name: "TRUFA MORANGO E MARACUJÁ 13,5 G",
         price: 110,
         sellingPrice: 99,
-        amount: 1,
+        amount: 0,
       },
     },
   ];
@@ -247,7 +257,7 @@ const Home: NextPage = () => {
                 cart.length > 1 ? "" : "no-overflow"
               }`}
             >
-              {cart.map((productCart: Cart, index) => (
+              {cartOrderByTitle.map((productCart: Cart, index) => (
                 <ProductCheckout
                   key={index}
                   title={productCart.title}

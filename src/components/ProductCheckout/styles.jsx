@@ -99,6 +99,37 @@ export const WrapperProductCheckout = styled.div`
           }
         }
 
+        .wrapper-amount-value {
+          position: relative;
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          .wrapper-arrow-up {
+            position: absolute;
+            top: 0.1em;
+            right: 0.3em;
+            cursor: pointer;
+            transition: 0.35s opacity ease-in;
+
+            &:hover {
+              opacity: 0.65;
+            }
+          }
+
+          .wrapper-arrow-down {
+            position: absolute;
+            bottom: -0.1em;
+            right: 0.3em;
+            cursor: pointer;
+            transition: 0.35s opacity ease-in;
+
+            &:hover {
+              opacity: 0.65;
+            }
+          }
+        }
+
         .wrapper-total {
           width: 100%;
           max-width: 6.6em;

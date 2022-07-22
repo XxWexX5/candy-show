@@ -84,7 +84,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         product.amount = getProductItem[0].amount - 1;
       }
 
-      if (product.amount <= 0) {
+      if (product.amount <= 1) {
         product.amount = 0;
 
         const removingNoAmountCart = cart.filter(
@@ -92,13 +92,19 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         );
 
         setCart([...removingNoAmountCart]);
+
+        const filterCart = cart.filter(
+          (productCart) => productCart.title !== product.title
+        );
+
+        setCart([...filterCart, product]);
+      } else {
+        const filterCart = cart.filter(
+          (productCart) => productCart.title !== product.title
+        );
+
+        setCart([...filterCart, product]);
       }
-
-      const filterCart = cart.filter(
-        (productCart) => productCart.title !== product.title
-      );
-
-      setCart([...filterCart, product]);
     }
 
     if (operation === "delete") {

@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
 import * as Styles from "./styles";
 
 import Image from "next/image";
@@ -64,14 +66,48 @@ export function ProductCheckout({
               Quantidade
             </label>
 
-            <input
-              type="number"
-              id="amount"
-              value={amount}
-              min="1"
-              max="99"
-              readOnly
-            />
+            <div className="wrapper-amount-value">
+              <input
+                type="number"
+                id="amount"
+                value={amount}
+                min="1"
+                max="99"
+                readOnly
+              />
+
+              <div
+                className="wrapper-arrow-up"
+                onClick={() =>
+                  handleAmount("plus", {
+                    imageSrc: imageSrc,
+                    imageAlt: imageAlt,
+                    title: title,
+                    olderPrice: olderPrice,
+                    price: price,
+                    amount: amount,
+                  })
+                }
+              >
+                <IoIosArrowUp color="#561B61" />
+              </div>
+
+              <div
+                className="wrapper-arrow-down"
+                onClick={() =>
+                  handleAmount("less", {
+                    imageSrc: imageSrc,
+                    imageAlt: imageAlt,
+                    title: title,
+                    olderPrice: olderPrice,
+                    price: price,
+                    amount: amount,
+                  })
+                }
+              >
+                <IoIosArrowDown color="#561B61" />
+              </div>
+            </div>
           </div>
 
           <div className="wrapper-total">
