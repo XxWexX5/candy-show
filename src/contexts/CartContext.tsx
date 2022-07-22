@@ -84,7 +84,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         product.amount = getProductItem[0].amount - 1;
       }
 
-      if (product.amount <= 1) {
+      if (product.amount < 1) {
         product.amount = 0;
 
         const removingNoAmountCart = cart.filter(
