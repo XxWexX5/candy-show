@@ -6,6 +6,9 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   images: {
-    domains: ["codeby.vteximg.com.br"],
+    domains: [
+      "codeby.vteximg.com.br",
+      "strapiuploadprovidertodotask.s3.us-east-1.amazonaws.com",
+    ],
   },
 };

@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useState, useContext } from "react";
 
+import products from "../data/products.js";
+
 import { CartContext } from "../contexts/CartContext";
 
 import { gql, useQuery } from "@apollo/client";
@@ -83,92 +85,6 @@ const Home: NextPage = () => {
   });
 
   // const { data } = useQuery(GET_PRODUCTS_QUERY);
-  let products = [
-    {
-      id: "1",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159959-800-1029/truffon-meio-amargo.png?v=636930938547630000",
-        name: "Trufa BENDITO CACAU 55% CACAU 30 G",
-        price: 303,
-        sellingPrice: 273,
-        amount: 0,
-      },
-    },
-    {
-      id: "2",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159939-800-1029/trufa-morango-30g.png?v=636916431597070000",
-        name: "TRUFA MORANGO",
-        price: 123,
-        sellingPrice: 111,
-        amount: 0,
-      },
-    },
-    {
-      id: "3",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159942-800-1029/trufa-tradicional.png?v=636916452526400000",
-        name: "TRUFA TRADICIONAL 30 G",
-        price: 303,
-        sellingPrice: 273,
-        amount: 0,
-      },
-    },
-    {
-      id: "4",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159957-800-1029/trufa-coco.png?v=636929369885800000",
-        name: "TRUFA DE COCO 30 G",
-        price: 303,
-        sellingPrice: 273,
-        amount: 0,
-      },
-    },
-    {
-      id: "5",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159993-800-1029/trufa-branco.png?v=636945743710500000",
-        name: "TRUFA BRANCO 30G",
-        price: 110,
-        sellingPrice: 99,
-        amount: 0,
-      },
-    },
-    {
-      id: "6",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159941-800-1029/mezzo.png?v=636916443729870000",
-        name: "TRUFA MEZZO 30 G",
-        price: 303,
-        sellingPrice: 273,
-        amount: 0,
-      },
-    },
-    {
-      id: "7",
-      attributes: {
-        __typename: "Product",
-        imageUrl:
-          "http://codeby.vteximg.com.br/arquivos/ids/159936-800-1029/Trufa-Morango-e-Maracuja.png?v=636915614811230000",
-        name: "TRUFA MORANGO E MARACUJÁ 13,5 G",
-        price: 110,
-        sellingPrice: 99,
-        amount: 0,
-      },
-    },
-  ];
 
   /*
   if (data) {
