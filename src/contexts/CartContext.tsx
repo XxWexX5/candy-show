@@ -35,10 +35,6 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }, []);
 
   useEffect(() => {
-    if (cart.length === 0) {
-      console.log("CARRINHO VAZIO");
-    }
-
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
@@ -77,37 +73,29 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
       setCart([...filterCart, product]);
     }
 
-    if (operation === "less") {
+    if (operation === "less" && cart.length > 0) {
       const getProductItem = cart.filter(
         (productCart) => productCart.title === product.title
       );
 
-      if (getProductItem.length === 0) {
-        product.amount = 1;
-      } else {
+      if (getProductItem.length > 0) {
         product.amount = getProductItem[0].amount - 1;
-      }
 
-      if (product.amount < 1) {
-        product.amount = 0;
+        if (product.amount < 1) {
+          product.amount = 0;
 
-        const removingNoAmountCart = cart.filter(
-          (productCart) => productCart.amount !== 0
-        );
+          const filterCart = cart.filter(
+            (productCart) => productCart.title !== product.title
+          );
 
-        setCart([...removingNoAmountCart]);
+          setCart([...filterCart, product]);
+        } else {
+          const filterCart = cart.filter(
+            (productCart) => productCart.title !== product.title
+          );
 
-        const filterCart = cart.filter(
-          (productCart) => productCart.title !== product.title
-        );
-
-        setCart([...filterCart, product]);
-      } else {
-        const filterCart = cart.filter(
-          (productCart) => productCart.title !== product.title
-        );
-
-        setCart([...filterCart, product]);
+          setCart([...filterCart, product]);
+        }
       }
     }
 
