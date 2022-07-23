@@ -35,6 +35,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   }, []);
 
   useEffect(() => {
+    if (cart.length === 0) {
+      console.log("CARRINHO VAZIO");
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 

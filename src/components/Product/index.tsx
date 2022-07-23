@@ -26,6 +26,10 @@ export function Product({
   const [countAmount, setCountAmount] = useState(0);
 
   useEffect(() => {
+    if (cart.length === 0) {
+      setCountAmount(0);
+    }
+
     cart.map((cartProduct) => {
       if (cartProduct.title === title) {
         return setCountAmount(cartProduct.amount);
@@ -102,7 +106,7 @@ export function Product({
           -
         </button>
 
-        <span className="value">{cart.length > 0 ? countAmount : 0}</span>
+        <span className="value">{countAmount}</span>
 
         <button
           className="button-plus"
