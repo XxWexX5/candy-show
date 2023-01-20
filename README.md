@@ -1,7 +1,7 @@
 # Candy Show
 By Wevison Ramalho.
 
-[![image-github.png](https://i.postimg.cc/MKsDt81X/image-github.png)](https://postimg.cc/2VZh8Mcf)
+[![image-github.png](https://i.postimg.cc/htz9rQS3/image-github.png)](https://postimg.cc/G4R832Tk)
 
 https://candy-show.vercel.app/
 
